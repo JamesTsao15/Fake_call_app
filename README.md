@@ -1,8 +1,10 @@
 # Fake_call_app
+錯誤好像是:
+java.lang.RuntimeException: Unable to start activity ComponentInfo{com.example.fake_call2/com.example.fake_call2.MainActivity}: android.view.InflateException: Binary XML file line #16 in com.example.fake_call2:layout/activity_main: Binary XML file line #16 in com.example.fake_call2:layout/activity_main: Error inflating class com.example.fake_call2.caller_information_view
 
+ Caused by: android.view.InflateException: Binary XML file line #16 in com.example.fake_call2:layout/activity_main: Error inflating class com.example.fake_call2.caller_information_view
 
-
-logcat 錯誤訊息:
+logcat 完整錯誤訊息:
 2022-02-07 14:08:56.789 22040-22040/com.example.fake_call2 E/AndroidRuntime: FATAL EXCEPTION: main
     Process: com.example.fake_call2, PID: 22040
     java.lang.RuntimeException: Unable to start activity ComponentInfo{com.example.fake_call2/com.example.fake_call2.MainActivity}: android.view.InflateException: Binary XML file line #16 in com.example.fake_call2:layout/activity_main: Binary XML file line #16 in com.example.fake_call2:layout/activity_main: Error inflating class com.example.fake_call2.caller_information_view
