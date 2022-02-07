@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="caller_information_view">
-        <attr name="caller_name" format="string" />
+        <attr name="caller_name" format="string"/>
         <attr name="caller_phone_nunber" format="string" />
         <attr name="caller_photo" format="integer" />
     </declare-styleable>

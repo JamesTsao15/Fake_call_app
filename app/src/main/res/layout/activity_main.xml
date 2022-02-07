@@ -10,17 +10,26 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
         <com.example.fake_call2.caller_information_view
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
 
         <GridView
             android:id="@+id/gridview_set_call_time"
             android:layout_width="358dp"
             android:layout_height="532dp"
-            android:numColumns="2"
-            android:layout_marginLeft="30dp">
+
+            android:numColumns="2">
 
         </GridView>
 

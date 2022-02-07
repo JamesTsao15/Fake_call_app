@@ -8,9 +8,10 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 
 
-class caller_information_view constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0)
+class caller_information_view @JvmOverloads constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int = 0)
     :ConstraintLayout(context,attrs,defStyleAttr)
 {
+
     val view= View.inflate(context,R.layout.caller_information,this)
     init {
         if (attrs !=null){

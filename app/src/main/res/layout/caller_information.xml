@@ -7,10 +7,10 @@
 
     <LinearLayout
         android:id="@+id/textView_caller_name"
-        android:layout_width="410dp"
-        android:layout_height="173dp"
-        android:orientation="vertical"
+        android:layout_width="358dp"
+        android:layout_height="175dp"
         android:background="@drawable/shape_round"
+        android:orientation="vertical"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp">
 
@@ -34,41 +34,41 @@
                 tools:srcCompat="@tools:sample/avatars" />
 
             <LinearLayout
-                android:layout_width="213dp"
+                android:layout_width="105dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/tv_caller_name"
-                    android:layout_width="match_parent"
+                    android:layout_width="155dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="50dp"
                     android:text="未知來電"
-                    android:textSize="20dp"/>
+                    android:textSize="20dp" />
 
                 <TextView
                     android:id="@+id/tv_caller_phone_number"
-                    android:layout_width="match_parent"
+                    android:layout_width="157dp"
                     android:layout_height="wrap_content"
                     android:text="0912345678"
-                    android:textSize="16dp"/>
+                    android:textSize="16dp" />
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="116dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
                 <Button
                     android:id="@+id/button"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/shape_circle"
+                    android:gravity="center"
                     android:text="撥打"
                     android:textSize="20dp"
-                    android:gravity="center"
                     app:backgroundTint="#469F49" />
             </LinearLayout>
         </LinearLayout>
