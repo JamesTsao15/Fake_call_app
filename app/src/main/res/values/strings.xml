@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Fake_call_app</string>
+    <integer-array name="icon_list">
+        <item>@drawable/caller</item>
+        <item>@drawable/call_time</item>
+        <item>@drawable/theme</item>
+        <item>@drawable/gentive</item>
+        <item>@drawable/voice</item>
+        <item>@drawable/ringtone</item>
+    </integer-array>
+</resources>
