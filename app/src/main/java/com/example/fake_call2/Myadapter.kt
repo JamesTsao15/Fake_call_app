@@ -1,6 +1,7 @@
 package com.example.fake_call2
 
 import android.content.Context
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
@@ -20,4 +21,6 @@ class MyAdapter(context: Context,data:ArrayList<Item>,
         tv_setting.text=item.setting_title
         return view
     }
+
+
 }
