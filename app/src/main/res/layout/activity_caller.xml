@@ -8,13 +8,16 @@
 
     <ImageView
         android:id="@+id/imageView_callerphoto_setting"
-        android:layout_width="147dp"
-        android:layout_height="129dp"
+        android:layout_width="225dp"
+        android:layout_height="229dp"
         android:layout_marginStart="141dp"
         android:layout_marginLeft="141dp"
         android:layout_marginTop="54dp"
         android:layout_marginEnd="141dp"
         android:layout_marginRight="141dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="147dp"
+        android:maxHeight="129dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -41,17 +44,16 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="61dp"
         android:layout_marginLeft="61dp"
-        android:layout_marginTop="268dp"
         android:layout_marginEnd="322dp"
         android:layout_marginRight="322dp"
         android:text="姓名"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/button_change_caller_photo" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/editTextPersonName"
         android:layout_width="301dp"
         android:layout_height="45dp"
         android:layout_marginStart="59dp"
@@ -78,7 +80,7 @@
         android:text="電話號碼"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextPersonName" />
 
     <EditText
         android:id="@+id/editTextPhone"

@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val setting_title_array= arrayOf<String>("來電者","來電時間","來電主題","來電顯示照片",
+        val setting_title_array= arrayOf<String>("增加來電者","來電時間","來電主題","選擇來電者",
             "來電聲音","來電鈴聲")
         gridView_home=findViewById<GridView>(R.id.gridview_set_call_time)
         val item=ArrayList<Item>()
