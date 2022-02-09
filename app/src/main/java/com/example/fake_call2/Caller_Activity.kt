@@ -33,6 +33,7 @@ class Caller_Activity : AppCompatActivity() {
     private lateinit var btn_Save_Caller_Information:Button
     private lateinit var editText_caller_name:EditText
     private lateinit var editText_caller_phone_number:EditText
+    private lateinit var btn_delete_caller:Button
     var Caller_information=ArrayList<Caller>()
     var photoPath_Store=""
     fun pick_photo(){
@@ -69,6 +70,7 @@ class Caller_Activity : AppCompatActivity() {
         imgview_callerphoto=findViewById(R.id.imageView_callerphoto_setting)
         btn_change_caller_photo=findViewById(R.id.button_change_caller_photo)
         btn_Save_Caller_Information=findViewById(R.id.button_Save)
+        btn_delete_caller=findViewById(R.id.button_delete)
         editText_caller_name=findViewById(R.id.editTextPersonName)
         editText_caller_phone_number=findViewById(R.id.editTextPhone)
         if(load_caller_data().isEmpty()!=true){
@@ -91,12 +93,35 @@ class Caller_Activity : AppCompatActivity() {
         btn_Save_Caller_Information.setOnClickListener {
             val Caller_Name=editText_caller_name.text.toString()
             val Caller_Phone=editText_caller_phone_number.text.toString()
-            val newCaller=Caller(Caller_Name,Caller_Phone,photoPath_Store)
-            Caller_information.add(newCaller)
-            editText_caller_phone_number.setText("")
-            editText_caller_name.setText("")
-//            Log.e("JAMES",Caller_information.toString())
-            save_caller_data()
+            if(Caller_Name.equals("")==true || Caller_Phone.equals("")==true){
+                Toast.makeText(this,"姓名電話不得為空",Toast.LENGTH_SHORT).show()
+            }
+            else{
+                val newCaller=Caller(Caller_Name,Caller_Phone,photoPath_Store)
+                Caller_information.add(newCaller)
+                editText_caller_phone_number.setText("")
+                editText_caller_name.setText("")
+                Log.e("JAMES",Caller_information.toString())
+                save_caller_data()
+                Toast.makeText(this,"新增成功",Toast.LENGTH_SHORT).show()
+            }
+        }
+        btn_delete_caller.setOnClickListener {
+           if(Caller_information.isEmpty()==false){
+               val delete_caller=editText_caller_name.text.toString()
+               for(i in 0 until Caller_information.size){
+                   val Caller_Name=Caller_information[i].name
+                   if(Caller_Name==delete_caller){
+                       Caller_information.removeAt(i)
+                       save_caller_data()
+                       Toast.makeText(this,"刪除通話者:$Caller_Name 成功",Toast.LENGTH_SHORT).show()
+                       break
+                   }
+                   else{
+                       Toast.makeText(this,"查無此姓名，請重新輸入",Toast.LENGTH_SHORT).show()
+                   }
+               }
+           }
         }
     }
     @RequiresApi(Build.VERSION_CODES.KITKAT)
@@ -115,7 +140,6 @@ class Caller_Activity : AppCompatActivity() {
             imgview_callerphoto.setImageBitmap(resize_img)
         }
         else{
-            Log.e("JAMES","照片選擇失敗")
             Toast.makeText(this,"照片選擇失敗",Toast.LENGTH_SHORT).show()
         }
     }

@@ -8,4 +8,7 @@
         <item>@drawable/voice</item>
         <item>@drawable/ringtone</item>
     </integer-array>
+    <integer-array name="timer">
+        <item>@drawable/timer</item>
+    </integer-array>
 </resources>

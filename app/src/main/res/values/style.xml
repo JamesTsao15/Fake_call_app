@@ -5,4 +5,8 @@
         <attr name="caller_phone_nunber" format="string" />
         <attr name="caller_photo" format="integer" />
     </declare-styleable>
+    <declare-styleable name="custom_timer_picker_view">
+        <attr name="timer_title" format="string"/>
+        <attr name="custom_timer_icon" format="integer" />
+    </declare-styleable>
 </resources>

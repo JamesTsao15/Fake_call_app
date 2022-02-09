@@ -42,7 +42,8 @@ class MainActivity : AppCompatActivity() {
                     startActivity(caller_intent)
                 }
                 1->{
-                    Log.e("JAMES","來電時間")
+                    val caller_timer_intent=Intent(this,Schedule_Call_Activity::class.java)
+                    startActivity(caller_timer_intent)
                 }
                 2->Log.e("JAMES","來電主題")
                 3->Log.e("JAMES","來電顯示照片")
