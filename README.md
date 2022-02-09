@@ -15,4 +15,5 @@ TypeToken in kotlin 用法:
      
      val turnsType = object : TypeToken<List<Turns>>() {}.type
      val turns = Gson().fromJson<List<Turns>>(pref.turns, turnsType)
+     
      參考網址:https://stackoverflow.com/questions/33381384/how-to-use-typetoken-generics-with-gson-in-kotlin
