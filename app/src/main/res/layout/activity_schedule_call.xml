@@ -21,6 +21,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.example.fake_call2.custom_timer_picker_view
+            android:id="@+id/customtimer_view"
             android:layout_width="match_parent"
             android:layout_height="134dp"
             android:padding="10dp" />
