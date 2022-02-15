@@ -1,6 +1,7 @@
 # Fake_call_app
 
 專案筆記:
+
 遇到的錯誤1:
 com.example.fake_call2.caller_information_view
      Caused by: java.lang.NoSuchMethodException: com.example.fake_call2.caller_information_view.<init> [class android.content.Context, interface android.util.AttributeSet]
