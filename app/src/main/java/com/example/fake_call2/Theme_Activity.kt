@@ -1,6 +1,7 @@
 package com.example.fake_call2
 
 import android.annotation.SuppressLint
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -13,6 +14,8 @@ class Theme_Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_theme)
+        val sharedPreferences: SharedPreferences =
+            getSharedPreferences("caller_information", MODE_PRIVATE)
         gridView_theme_pick=findViewById(R.id.gridView_theme_style)
         tv_styleselsct=findViewById(R.id.textView_style_selected)
         val setting_title_array= arrayOf<String>("明亮風格","暗系風格")
@@ -24,12 +27,35 @@ class Theme_Activity : AppCompatActivity() {
             theme_item.add(Item(icon,setting_title))
         }
         gridView_theme_pick.adapter= MyAdapter(this,theme_item,R.layout.custom_theme_gridview)
-        gridView_theme_pick.setOnItemClickListener { adapterView, view, position, l ->
-            when(position){
-               0->tv_styleselsct.text="目前風格為:明亮風格"
-               1->tv_styleselsct.text="目前風格為:暗系風格"
-            }
+        val isDarkTheme:Boolean=sharedPreferences.getBoolean("isDarkTheme",false)
+        if(isDarkTheme==true){
+            tv_styleselsct.text="目前設定風格為:暗系風格"
+        }
+        else{
+            tv_styleselsct.text="目前設定風格為:明亮風格"
         }
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val sharedPreferences: SharedPreferences =
+            getSharedPreferences("caller_information", MODE_PRIVATE)
+        val editor: SharedPreferences.Editor=sharedPreferences.edit()
+        gridView_theme_pick.setOnItemClickListener { adapterView, view, position, l ->
+            when(position){
+                0->{
+                    editor.putBoolean("isDarkTheme",false)
+                    tv_styleselsct.text="目前設定風格為:明亮風格"
+                    editor.apply()
+                }
+                1->{
+                    editor.putBoolean("isDarkTheme",true)
+                    tv_styleselsct.text="目前設定風格為:暗系風格"
+                    editor.apply()
+                }
+
+            }
+        }
     }
 }

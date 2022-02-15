@@ -50,7 +50,10 @@ class MainActivity : AppCompatActivity() {
                     val caller_theme_intent=Intent(this,Theme_Activity::class.java)
                     startActivity(caller_theme_intent)
                 }
-                3->Log.e("JAMES","來電顯示照片")
+                3->{
+                    val choose_caller_intent=Intent(this,Choose_Caller_Activity::class.java)
+                    startActivity(choose_caller_intent)
+                }
                 4->Log.e("JAMES","來電聲音")
                 5->Log.e("JAMES","來電鈴聲")
             }

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Choose_Caller_Activity">
+
+    <ImageView
+        android:id="@+id/imageView_choose_caller_photo"
+        android:layout_width="213dp"
+        android:layout_height="323dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="68dp"
+        app:layout_constraintStart_toEndOf="@+id/button_lastPhoto"
+        app:layout_constraintTop_toBottomOf="@+id/textView_choose_caller_Name"
+        app:srcCompat="@drawable/callerphoto"
+        tools:srcCompat="@drawable/callerphoto" />
+
+    <Button
+        android:id="@+id/button_lastPhoto"
+        android:layout_width="50dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="264dp"
+        android:background="@drawable/ic_baseline_navigate_before_24"
+        android:text=""
+        app:backgroundTint="#151515"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_nextPhoto"
+        android:layout_width="50dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="264dp"
+        android:text=""
+        android:background="@drawable/ic_baseline_navigate_next_24"
+        app:backgroundTint="#0B0A0A"
+        app:layout_constraintStart_toEndOf="@+id/imageView_choose_caller_photo"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_saveChooseCaller"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="156dp"
+        android:layout_marginLeft="156dp"
+        android:layout_marginTop="72dp"
+        android:text="確定"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_choose_caller_photo" />
+
+    <TextView
+        android:id="@+id/textView_choose_caller_Name"
+        android:layout_width="214dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="98dp"
+        android:layout_marginLeft="98dp"
+        android:layout_marginTop="51dp"
+        android:text="Unknown"
+        android:textSize="24dp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

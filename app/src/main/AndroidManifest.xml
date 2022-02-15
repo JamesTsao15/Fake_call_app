@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fake_call2">
         <activity
+            android:name=".Choose_Caller_Activity"
+            android:exported="false" />
+        <activity
             android:name=".Full_color_caller_theme_dark_Activity"
             android:exported="false" />
         <activity
@@ -19,8 +22,8 @@
             android:exported="false" />
         <activity
             android:name=".Theme_Activity"
-            android:label="Select Theme"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Select Theme" />
         <activity
             android:name=".Schedule_Call_Activity"
             android:label="Schedule Call" />
