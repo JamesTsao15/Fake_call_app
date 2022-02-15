@@ -6,10 +6,11 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.GridView
+import android.widget.ImageButton
 
 class MainActivity : AppCompatActivity() {
     private lateinit var gridView_home: GridView
-    private lateinit var btn_call:Button
+    private lateinit var btn_call:ImageButton
     private lateinit var callerInformationView: caller_information_view
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -27,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         }
         gridView_home.adapter= MyAdapter(this,item,R.layout.component_grid_view)
         callerInformationView=findViewById(R.id.view_callerinformation)
-        btn_call=callerInformationView.findViewById<Button>(R.id.btn_call)
+        btn_call=callerInformationView.findViewById(R.id.imageButton_call)
     }
 
     override fun onResume() {
@@ -45,7 +46,10 @@ class MainActivity : AppCompatActivity() {
                     val caller_timer_intent=Intent(this,Schedule_Call_Activity::class.java)
                     startActivity(caller_timer_intent)
                 }
-                2->Log.e("JAMES","來電主題")
+                2->{
+                    val caller_theme_intent=Intent(this,Theme_Activity::class.java)
+                    startActivity(caller_theme_intent)
+                }
                 3->Log.e("JAMES","來電顯示照片")
                 4->Log.e("JAMES","來電聲音")
                 5->Log.e("JAMES","來電鈴聲")

@@ -11,4 +11,8 @@
     <integer-array name="timer">
         <item>@drawable/timer</item>
     </integer-array>
+    <integer-array name="theme_list">
+        <item>@drawable/callertheme_bright</item>
+        <item>@drawable/callertheme_dark</item>
+    </integer-array>
 </resources>

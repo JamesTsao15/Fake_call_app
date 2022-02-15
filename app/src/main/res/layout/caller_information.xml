@@ -7,8 +7,8 @@
 
     <LinearLayout
         android:id="@+id/textView_caller_name"
-        android:layout_width="358dp"
-        android:layout_height="175dp"
+        android:layout_width="356dp"
+        android:layout_height="176dp"
         android:background="@drawable/shape_round"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="1dp"
@@ -61,15 +61,13 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/btn_call"
+                <ImageButton
+                    android:id="@+id/imageButton_call"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="111dp"
+
                     android:background="@drawable/shape_circle"
-                    android:gravity="center"
-                    android:text="撥打"
-                    android:textSize="20dp"
-                    app:backgroundTint="#469F49" />
+                    android:src="@drawable/ic_baseline_phone_24" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
