@@ -46,7 +46,8 @@ gridview選擇後外框變色:
 
         thread.start()
      
- 
+ 遇到問題6:
+     
  thread如何停止:
      
      thread.interrupt()
