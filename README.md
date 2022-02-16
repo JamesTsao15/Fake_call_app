@@ -44,7 +44,7 @@ gridview選擇後外框變色:
             }
         })
 
-        pick_caller_thread.start()
+        thread.start()
      
  
  thread如何停止:
