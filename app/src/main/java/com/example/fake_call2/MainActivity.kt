@@ -1,16 +1,18 @@
 package com.example.fake_call2
 
+
+import android.app.Activity
 import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.GridView
-import android.widget.ImageButton
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
+import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AlertDialog
 
 
 class MainActivity : AppCompatActivity() {
@@ -20,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tv_caller_information_phone_number:TextView
     private lateinit var imgView_caller_information_photo: ImageView
     private lateinit var callerInformationView: caller_information_view
+    var isClickAudio:Boolean=false
     fun load_caller_photo(photoPath:String){
         if(photoPath!=""){
             val bitmap: Bitmap = BitmapFactory.decodeFile(photoPath)
@@ -30,6 +33,11 @@ class MainActivity : AppCompatActivity() {
             imgView_caller_information_photo.setImageResource(R.drawable.callerphoto)
         }
 
+    }
+    fun pick_Audio(){
+        val uri=android.provider.MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
+        val audio_picker_intent=Intent(Intent.ACTION_PICK,uri)
+        startActivityForResult(audio_picker_intent,1)
     }
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -85,10 +93,61 @@ class MainActivity : AppCompatActivity() {
                     val choose_caller_intent=Intent(this,Choose_Caller_Activity::class.java)
                     startActivity(choose_caller_intent)
                 }
-                4->Log.e("JAMES","來電聲音")
-                5->Log.e("JAMES","來電鈴聲")
+                4->{
+                    val select_ardio_array= arrayOf("音訊選擇器","自行錄音")
+                    var alertdialog_position=0
+                    AlertDialog.Builder(this)
+                        .setTitle("選擇音訊")
+                        .setSingleChoiceItems(select_ardio_array,0){
+                            dialogInterface,i->
+                            alertdialog_position=i
+                        }
+                        .setPositiveButton("確定"){
+                            dialog,which->
+                            if(alertdialog_position==0){
+                                isClickAudio=true
+                                pick_Audio()
+                            }
+                        }.show()
+                }
+                5->{
+                    val select_ardio_array= arrayOf("預設鈴聲","音訊選擇器")
+                    var alertdialog_position=0
+                    AlertDialog.Builder(this)
+                        .setTitle("選擇鈴聲")
+                        .setSingleChoiceItems(select_ardio_array,0){
+                                dialogInterface,i->
+                            alertdialog_position=i
+                        }
+                        .setPositiveButton("確定"){
+                                dialog,which->
+                                if(alertdialog_position==1){
+                                    isClickAudio=false
+                                    pick_Audio()
+                                }
+
+                        }.show()
+                }
             }
 
         }
+    }
+
+    @RequiresApi(Build.VERSION_CODES.KITKAT)
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(requestCode==1 && resultCode==Activity.RESULT_OK){
+            val sharedPreferences:SharedPreferences=getSharedPreferences("caller_information", MODE_PRIVATE)
+            val editor:SharedPreferences.Editor=sharedPreferences.edit()
+            val uri=data!!.data
+            val uriPathHelper=URIPathHelper()
+            val audioPath= uri?.let { uriPathHelper.getPath(this, it) }
+            if(isClickAudio==true)editor.putString("Audio_Path",audioPath)
+            else{
+                editor.putString("PhoneTone_Path",audioPath)
+            }
+            editor.apply()
+        }
+
     }
 }
