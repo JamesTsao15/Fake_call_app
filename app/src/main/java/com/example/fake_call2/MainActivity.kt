@@ -1,17 +1,36 @@
 package com.example.fake_call2
 
 import android.content.Intent
+import android.content.SharedPreferences
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
 import android.widget.GridView
 import android.widget.ImageButton
+import android.widget.ImageView
+import android.widget.TextView
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var gridView_home: GridView
     private lateinit var btn_call:ImageButton
+    private lateinit var tv_caller_information_name: TextView
+    private lateinit var tv_caller_information_phone_number:TextView
+    private lateinit var imgView_caller_information_photo: ImageView
     private lateinit var callerInformationView: caller_information_view
+    fun load_caller_photo(photoPath:String){
+        if(photoPath!=""){
+            val bitmap: Bitmap = BitmapFactory.decodeFile(photoPath)
+            val resize_img= Bitmap.createScaledBitmap(bitmap,225,225,false)
+            imgView_caller_information_photo.setImageBitmap(resize_img)
+        }
+        else{
+            imgView_caller_information_photo.setImageResource(R.drawable.callerphoto)
+        }
+
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -29,10 +48,22 @@ class MainActivity : AppCompatActivity() {
         gridView_home.adapter= MyAdapter(this,item,R.layout.component_grid_view)
         callerInformationView=findViewById(R.id.view_callerinformation)
         btn_call=callerInformationView.findViewById(R.id.imageButton_call)
+        tv_caller_information_name=callerInformationView.findViewById(R.id.tv_caller_name)
+        tv_caller_information_phone_number=callerInformationView.findViewById(R.id.tv_caller_phone_number)
+        imgView_caller_information_photo=callerInformationView.findViewById(R.id.imageView_callerphoto)
     }
 
     override fun onResume() {
         super.onResume()
+        val sharedPreferences:SharedPreferences=getSharedPreferences("caller_information", MODE_PRIVATE)
+        val caller_name=sharedPreferences.getString("choose_caller_name","未知來電")
+        val caller_phone_number=sharedPreferences.getString("choose_caller_phone_number","09123456789")
+        val caller_poto_path=sharedPreferences.getString("choose_caller_photo_path","")
+        tv_caller_information_name.text=caller_name
+        tv_caller_information_phone_number.text=caller_phone_number
+        if (caller_poto_path != null) {
+            load_caller_photo(caller_poto_path)
+        }
         btn_call.setOnClickListener {
             Log.e("JAMES","on click calling")
         }
@@ -58,9 +89,6 @@ class MainActivity : AppCompatActivity() {
                 5->Log.e("JAMES","來電鈴聲")
             }
 
-        }
-        callerInformationView.setOnClickListener {
-            Log.e("JAMES","onclick_view")
         }
     }
 }

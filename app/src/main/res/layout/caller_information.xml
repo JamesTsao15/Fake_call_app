@@ -27,21 +27,22 @@
             android:orientation="horizontal">
 
             <ImageView
+                android:layout_marginTop="30dp"
                 android:id="@+id/imageView_callerphoto"
-                android:layout_width="110dp"
-                android:layout_height="match_parent"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 tools:srcCompat="@tools:sample/avatars" />
 
             <LinearLayout
-                android:layout_width="105dp"
+                android:layout_width="155dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/tv_caller_name"
-                    android:layout_width="155dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="50dp"
                     android:text="未知來電"
@@ -49,7 +50,7 @@
 
                 <TextView
                     android:id="@+id/tv_caller_phone_number"
-                    android:layout_width="157dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0912345678"
                     android:textSize="16dp" />
@@ -64,7 +65,7 @@
                 <ImageButton
                     android:id="@+id/imageButton_call"
                     android:layout_width="wrap_content"
-                    android:layout_height="111dp"
+                    android:layout_height="110dp"
 
                     android:background="@drawable/shape_circle"
                     android:src="@drawable/ic_baseline_phone_24" />
