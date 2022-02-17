@@ -31,3 +31,30 @@ gridview選擇後外框變色:
      
      方法:
      android:listSelector="你想要的背景轉換檔"
+ 遇到問題5:
+ 
+  thread用法:
+     
+     val thread=Thread(Runnable {
+            while(條件){
+                runOnUiThread{    //在改變UI的thread需用到
+                    //須執行的東西
+                }
+                Thread.sleep(200)
+            }
+        })
+
+        thread.start()
+     
+ 遇到問題6:
+     
+ thread如何停止:
+     
+     thread.interrupt()
+     
+     interrupt後出現的問題:
+     
+     1.在mainloop while迴圈加上判斷條件
+
+     2.在thread內加try  catch來解決crash
+     
