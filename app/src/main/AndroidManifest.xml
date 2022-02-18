@@ -3,6 +3,7 @@
     package="com.example.fake_call2">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
 
     <application
         android:allowBackup="true"
@@ -11,8 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Fake_call2">
+        <activity android:name=".Record_Audio_Activity"
+            android:label="Record Audio"></activity>
         <activity
             android:name=".Choose_Caller_Activity"
+            android:label="Choose Caller"
             android:exported="false" />
         <activity
             android:name=".Full_color_caller_theme_dark_Activity"

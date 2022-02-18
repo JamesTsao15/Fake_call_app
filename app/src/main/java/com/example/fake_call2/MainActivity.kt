@@ -94,7 +94,7 @@ class MainActivity : AppCompatActivity() {
                     startActivity(choose_caller_intent)
                 }
                 4->{
-                    val select_ardio_array= arrayOf("音訊選擇器","自行錄音")
+                    val select_ardio_array= arrayOf("無","音訊選擇器","自行錄音")
                     var alertdialog_position=0
                     AlertDialog.Builder(this)
                         .setTitle("選擇音訊")
@@ -104,9 +104,13 @@ class MainActivity : AppCompatActivity() {
                         }
                         .setPositiveButton("確定"){
                             dialog,which->
-                            if(alertdialog_position==0){
+                            if(alertdialog_position==1){
                                 isClickAudio=true
                                 pick_Audio()
+                            }
+                            if(alertdialog_position==2){
+                                val record_intent=Intent(this,Record_Audio_Activity::class.java)
+                                startActivity(record_intent)
                             }
                         }.show()
                 }

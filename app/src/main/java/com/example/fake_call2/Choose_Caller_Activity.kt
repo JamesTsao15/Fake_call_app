@@ -98,7 +98,6 @@ class Choose_Caller_Activity : AppCompatActivity() {
                     Thread.sleep(200)
                 }
             })
-
             pick_caller_thread.start()
             if(leave_Activity==true)pick_caller_thread.interrupt()
             btn_choose_caller_next_photo.setOnClickListener {
@@ -123,7 +122,7 @@ class Choose_Caller_Activity : AppCompatActivity() {
                 editor.putString("choose_caller_photo_path",callerinformation_array[index].photoPath)
                 editor.apply()
                 Toast.makeText(this,"設定來電者為${callerinformation_array[index].name}成功",Toast.LENGTH_SHORT).show()
-
+                finish()
             }
         }
        else{
@@ -136,9 +135,8 @@ class Choose_Caller_Activity : AppCompatActivity() {
            tv_show_no_file.text="無任何資料，請先增加來電者資料"
         }
     }
-
-    override fun onBackPressed() {
-        super.onBackPressed()
+    override fun finish() {
+        super.finish()
         leave_Activity=true
     }
 }
