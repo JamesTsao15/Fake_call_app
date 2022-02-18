@@ -137,7 +137,7 @@ class Record_Audio_Activity : AppCompatActivity() {
                             val file=File(folder,fileName)
                             val sharedPreferences:SharedPreferences=getSharedPreferences("caller_information", MODE_PRIVATE)
                             val editor:SharedPreferences.Editor=sharedPreferences.edit()
-                            editor.putString("audio_path",Uri.fromFile(file).toString())
+                            editor.putString("record_audio_path",Uri.fromFile(file).toString())
                             editor.apply()
                             player.stop()
                             player.reset()
