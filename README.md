@@ -58,3 +58,16 @@ gridview選擇後外框變色:
 
      2.在thread內加try  catch來解決crash
      
+遇到問題7:
+     
+mediarecorder crash:
+     
+Caused by: android.system.ErrnoException: open failed: EISDIR (Is a directory)
+
+     造成原因:
+     
+     檔名未進入變數，recorder就prepare了造成crash
+     
+     解決方案:
+     
+     利用Thread監聽變數狀態及按鈕狀態，並利用上述中開始即結束方法完成thread
