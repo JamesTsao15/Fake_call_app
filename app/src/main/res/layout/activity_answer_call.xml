@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/caller_theme"
+    tools:context=".Answer_Call_Activity">
+
+    <ImageView
+        android:id="@+id/imageView_answer_callerphoto"
+        android:layout_width="219dp"
+        android:layout_height="202dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginLeft="96dp"
+        android:layout_marginTop="67dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginRight="96dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/callerphoto" />
+
+    <TextView
+        android:id="@+id/textView_answer_callerNmae"
+        android:layout_width="219dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginLeft="96dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginRight="96dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_answer_callerphoto" />
+
+    <ImageButton
+        android:id="@+id/imageButton_listen"
+        android:layout_width="108dp"
+        android:layout_height="106dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="232dp"
+        android:background="@drawable/shape_circle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_answer_callerNmae"
+        app:srcCompat="@drawable/ic_baseline_phone_24" />
+
+    <ImageButton
+        android:id="@+id/imageButton_cancel_caller"
+        android:layout_width="107dp"
+        android:layout_height="109dp"
+        android:layout_marginTop="232dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
+        android:background="@drawable/shape_circle_red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_answer_callerNmae"
+        app:srcCompat="@android:drawable/btn_dialog" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

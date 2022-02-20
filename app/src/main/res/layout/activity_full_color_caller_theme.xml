@@ -8,7 +8,7 @@
     tools:context=".Full_color_caller_theme_Activity">
 
     <ImageView
-        android:id="@+id/imageView_callerviewphoto_dark"
+        android:id="@+id/imageView_callerviewphoto"
         android:layout_width="172dp"
         android:layout_height="214dp"
         android:layout_marginStart="119dp"
@@ -24,7 +24,7 @@
         />
 
     <TextView
-        android:id="@+id/textView_callerview_Name_dark"
+        android:id="@+id/textView_callerview_Name"
         android:layout_width="159dp"
         android:layout_height="35dp"
         android:layout_marginStart="126dp"
@@ -37,10 +37,10 @@
         android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView_callerviewphoto_dark" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView_callerviewphoto" />
 
     <TextView
-        android:id="@+id/textView_callTime_dark"
+        android:id="@+id/textView_callTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="176dp"
@@ -52,7 +52,7 @@
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_callerview_Name_dark" />
+        app:layout_constraintTop_toBottomOf="@+id/textView_callerview_Name" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -63,10 +63,10 @@
         android:layout_marginTop="80dp"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_callTime_dark">
+        app:layout_constraintTop_toBottomOf="@+id/textView_callTime">
 
         <ImageButton
-            android:id="@+id/button_Mic_dark"
+            android:id="@+id/button_Mic"
             android:layout_width="86dp"
             android:layout_height="match_parent"
             android:background="#0000"
@@ -74,7 +74,7 @@
             android:tint="#0E0E0E" />
 
         <ImageButton
-            android:id="@+id/button_webcam_dark"
+            android:id="@+id/button_webcam"
             android:layout_width="90dp"
             android:layout_height="match_parent"
             android:background="#0000"
@@ -82,7 +82,7 @@
             android:tint="#0E0E0E" />
 
         <ImageButton
-            android:id="@+id/button_voiceOut_dark"
+            android:id="@+id/button_voiceOut"
             android:layout_width="99dp"
             android:layout_height="match_parent"
             android:background="#0000"
@@ -92,7 +92,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/textView_mic_dark"
+        android:id="@+id/textView_mic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="68dp"
@@ -103,36 +103,36 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
     <TextView
-        android:id="@+id/textView_webcam_dark"
+        android:id="@+id/textView_webcam"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginLeft="36dp"
         android:layout_marginTop="16dp"
         android:text="開始視訊"
-        app:layout_constraintStart_toEndOf="@+id/textView_mic_dark"
+        app:layout_constraintStart_toEndOf="@+id/textView_mic"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
     <TextView
-        android:id="@+id/textView_VoiceOut_dark"
+        android:id="@+id/textView_VoiceOut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="16dp"
         android:text="開啟擴音"
-        app:layout_constraintStart_toEndOf="@+id/textView_webcam_dark"
+        app:layout_constraintStart_toEndOf="@+id/textView_webcam"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
     <ImageButton
-        android:id="@+id/imageButton__dark"
-        android:layout_width="77dp"
-        android:layout_height="98dp"
-        android:layout_marginStart="164dp"
-        android:layout_marginLeft="164dp"
+        android:id="@+id/imageButton_bright"
+        android:layout_width="95dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="156dp"
+        android:layout_marginLeft="156dp"
         android:layout_marginTop="48dp"
         android:background="@drawable/shape_circle_red"
         android:src="@drawable/ic_baseline_phone_24"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_webcam_dark" />
+        app:layout_constraintTop_toBottomOf="@+id/textView_webcam" />
 </androidx.constraintlayout.widget.ConstraintLayout>

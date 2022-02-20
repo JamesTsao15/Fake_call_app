@@ -64,16 +64,22 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         val sharedPreferences:SharedPreferences=getSharedPreferences("caller_information", MODE_PRIVATE)
+        val editor:SharedPreferences.Editor=sharedPreferences.edit()
+        editor.putString("Audio_Path","")
+        editor.putString("PhoneTone_Path","")
         val caller_name=sharedPreferences.getString("choose_caller_name","未知來電")
         val caller_phone_number=sharedPreferences.getString("choose_caller_phone_number","09123456789")
-        val caller_poto_path=sharedPreferences.getString("choose_caller_photo_path","")
+        val caller_photo_path=sharedPreferences.getString("choose_caller_photo_path","")
         tv_caller_information_name.text=caller_name
         tv_caller_information_phone_number.text=caller_phone_number
-        if (caller_poto_path != null) {
-            load_caller_photo(caller_poto_path)
+        if (caller_photo_path != null) {
+            load_caller_photo(caller_photo_path)
         }
         btn_call.setOnClickListener {
-            Log.e("JAMES","on click calling")
+
+            Thread.sleep(sharedPreferences.getInt("timer_setting_time_ms",0).toLong())
+            val AnswerCallIntent=Intent(this,Answer_Call_Activity::class.java)
+            startActivity(AnswerCallIntent)
         }
         gridView_home.setOnItemClickListener { adapterView, view, position, l ->
             when(position){
@@ -125,9 +131,14 @@ class MainActivity : AppCompatActivity() {
                         }
                         .setPositiveButton("確定"){
                                 dialog,which->
+
                                 if(alertdialog_position==1){
                                     isClickAudio=false
                                     pick_Audio()
+                                }
+                                else{
+                                    editor.putString("PhoneTone_Path","")
+                                    editor.apply()
                                 }
 
                         }.show()
@@ -146,7 +157,9 @@ class MainActivity : AppCompatActivity() {
             val uri=data!!.data
             val uriPathHelper=URIPathHelper()
             val audioPath= uri?.let { uriPathHelper.getPath(this, it) }
-            if(isClickAudio==true)editor.putString("Audio_Path",audioPath)
+            if(isClickAudio==true){
+                editor.putString("Audio_Path",audioPath)
+            }
             else{
                 editor.putString("PhoneTone_Path",audioPath)
             }
