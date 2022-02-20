@@ -98,3 +98,18 @@ mp3檔儲存位置(推薦):
       player.setDataSource(afd.getFileDescriptor(),afd.getStartOffset(),afd.getLength());
       player.prepare();
       player.start();
+     
+遇到問題10:
+     
+ 如何用聽筒播放音訊:
+     
+     val audioManager = getSystemService(Context.AUDIO_SERVICE) as AudioManager
+     audioManager.mode = AudioManager.MODE_IN_COMMUNICATION
+     audioManager.isSpeakerphoneOn=false
+  
+  參考網址:
+     
+     https://blog.csdn.net/u012440207/article/details/121725566
+     
+     https://www.itread01.com/content/1546908316.html
+     
