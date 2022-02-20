@@ -71,3 +71,30 @@ Caused by: android.system.ErrnoException: open failed: EISDIR (Is a directory)
      解決方案:
      
      利用Thread監聽變數狀態及按鈕狀態，並利用上述中開始即結束方法完成thread
+
+遇到問題8:
+
+隱藏status bar解決方案:
+     
+資料來源:https://stackoverflow.com/questions/42968600/how-to-hide-status-bar-in-android-in-just-one-activity/42968869#42968869?newreg=55ab1411effc4ed08764264c9e5beedc
+     
+     Java code:
+     @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        //Add Below line to hide 
+        getSupportActionBar().hide();
+    }
+     
+遇到問題9:
+     
+mp3檔儲存位置(推薦):
+     
+資料來源:https://stackoverflow.com/questions/10959554/right-place-for-putting-mp3-files-in-an-android-project
+     
+      Java code:
+      AssetFileDescriptor afd = getAssets().openFd("AudioFile.mp3");
+      MediaPlayer player = new MediaPlayer();
+      player.setDataSource(afd.getFileDescriptor(),afd.getStartOffset(),afd.getLength());
+      player.prepare();
+      player.start();
