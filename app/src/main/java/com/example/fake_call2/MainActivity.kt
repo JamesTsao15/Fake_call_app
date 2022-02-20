@@ -65,6 +65,7 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
         val sharedPreferences:SharedPreferences=getSharedPreferences("caller_information", MODE_PRIVATE)
         val editor:SharedPreferences.Editor=sharedPreferences.edit()
+        btn_call.isEnabled=true
         editor.putString("Audio_Path","")
         editor.putString("PhoneTone_Path","")
         val caller_name=sharedPreferences.getString("choose_caller_name","未知來電")
@@ -76,7 +77,7 @@ class MainActivity : AppCompatActivity() {
             load_caller_photo(caller_photo_path)
         }
         btn_call.setOnClickListener {
-
+            btn_call.isEnabled=false
             Thread.sleep(sharedPreferences.getInt("timer_setting_time_ms",0).toLong())
             val AnswerCallIntent=Intent(this,Answer_Call_Activity::class.java)
             startActivity(AnswerCallIntent)

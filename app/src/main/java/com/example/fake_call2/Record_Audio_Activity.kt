@@ -18,6 +18,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.net.toUri
 import java.io.File
+import java.lang.IllegalStateException
 
 class Record_Audio_Activity : AppCompatActivity() {
     private val recorder=MediaRecorder()
@@ -139,8 +140,6 @@ class Record_Audio_Activity : AppCompatActivity() {
                             val editor:SharedPreferences.Editor=sharedPreferences.edit()
                             editor.putString("record_audio_path",Uri.fromFile(file).toString())
                             editor.apply()
-                            player.stop()
-                            player.reset()
                             finish()
                         }
                         player.setOnCompletionListener {
@@ -154,7 +153,6 @@ class Record_Audio_Activity : AppCompatActivity() {
                     }
                 }
                 Thread.sleep(200)
-                Log.e("JAMES","inthread")
             }
 
         })
@@ -176,12 +174,17 @@ class Record_Audio_Activity : AppCompatActivity() {
 
     override fun finish() {
         super.finish()
-        player.stop()
-        player.release()
+        try{
+            player.stop()
+            player.release()
+        }catch (e:IllegalStateException){
+         e.printStackTrace()
+        }
         val file=File(folder,fileName)
         val sharedPreferences:SharedPreferences=getSharedPreferences("caller_information", MODE_PRIVATE)
         val editor:SharedPreferences.Editor=sharedPreferences.edit()
-        editor.putString("audio_path",Uri.fromFile(file).toString())
+        Log.e("JAMES","store audio path")
+        editor.putString("Audio_Path",Uri.fromFile(file).toString())
         editor.apply()
         leave_activity=true
     }
