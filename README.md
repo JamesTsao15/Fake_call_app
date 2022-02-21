@@ -6,10 +6,41 @@
 
 可新增照片姓名電話資訊，也可利用輸入假來電者姓名此刪除此caller資料
 
-          ![image](https://github.com/JamesTsao15/Fake_call_app/blob/master/gif%20pictrue/add_caller.gif)
+![image](https://github.com/JamesTsao15/Fake_call_app/blob/master/gif%20pictrue/add_caller.gif)
 
+2.設定假來電打來的時間:
 
+可以自訂義時間，又或是使用快捷方塊選擇時間。
 
+![image](https://github.com/JamesTsao15/Fake_call_app/blob/master/gif%20pictrue/setting_caller_time.gif)
+
+3.選擇來電主題:
+
+可以選擇明亮頁面，又或是暗系頁面
+
+![image](https://github.com/JamesTsao15/Fake_call_app/blob/master/gif%20pictrue/pick_theme.gif)
+
+4.選擇來電者:
+
+可以從之前新增的假來電者尋找你想設定的來電者是誰
+
+![image](https://github.com/JamesTsao15/Fake_call_app/blob/master/gif%20pictrue/pick_caller.gif)
+
+5.選擇來電者聲音
+
+可以使用內建音訊，又或是自行錄製
+
+![image](https://github.com/JamesTsao15/Fake_call_app/blob/master/gif%20pictrue/pick_audio.gif)
+
+6.選擇來電鈴聲:
+
+可以使用預設鈴聲，又或是從收機內音訊挑選
+
+![image](https://github.com/JamesTsao15/Fake_call_app/blob/master/gif%20pictrue/pick_phonetone.gif)
+
+設定上述幾點後的動作:
+
+![image](https://github.com/JamesTsao15/Fake_call_app/blob/master/gif%20pictrue/fake_call_show.gif)
 
 專案筆記:
 
