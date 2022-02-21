@@ -6,7 +6,7 @@
 
 可新增照片姓名電話資訊，也可利用輸入假來電者姓名此刪除此caller資料
 
-![image](https://github.com/JamesTsao15/Fake_call_app/blob/master/gif%20pictrue/add_caller.gif)
+          ![image](https://github.com/JamesTsao15/Fake_call_app/blob/master/gif%20pictrue/add_caller.gif)
 
 
 
