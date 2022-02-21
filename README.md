@@ -1,8 +1,20 @@
-# Fake_call_app
+# Fake_call_app(假來電App)
+
+動作說明:
+
+1.新增假來電者資訊:
+
+可新增照片姓名電話資訊，也可利用輸入假來電者姓名此刪除此caller資料
+
+![image](https://github.com/JamesTsao15/Fake_call_app/blob/master/gif%20pictrue/add_caller.gif)
+
+
+
 
 專案筆記:
 
 遇到的錯誤1:
+
 com.example.fake_call2.caller_information_view
      Caused by: java.lang.NoSuchMethodException: com.example.fake_call2.caller_information_view.<init> [class android.content.Context, interface android.util.AttributeSet]
      
